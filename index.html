@@ -5,13 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Happy Birthday Gulista 🥰✨</title>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      user-select: none;
       -webkit-tap-highlight-color: transparent;
     }
     body {
@@ -23,7 +21,6 @@
       align-items: center;
       overflow-x: hidden;
       color: #7b1e3e;
-      position: relative;
     }
     .phone-wrapper {
       width: 100%;
@@ -32,7 +29,6 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      background: transparent;
       padding: 24px 20px 40px;
       justify-content: center;
       align-items: center;
@@ -44,64 +40,45 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      animation: fadeIn 0.4s ease forwards;
     }
     .screen.active {
       display: flex;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .btn-primary {
       background: #e63962;
       color: #fff;
       border: none;
-      padding: 12px 28px;
-      font-size: 16px;
+      padding: 14px 32px;
+      font-size: 17px;
       font-weight: 700;
       border-radius: 25px;
       cursor: pointer;
       box-shadow: 0 4px 15px rgba(230, 57, 98, 0.35);
-      transition: transform 0.2s, background 0.2s;
-    }
-    .btn-primary:active {
-      transform: scale(0.96);
     }
 
-    /* Screen 1: Heart Card */
+    /* Screen 1 */
     .card-box {
       width: 250px;
       height: 250px;
-      background: rgba(255, 255, 255, 0.85);
+      background: #ffffff;
       border-radius: 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 25px rgba(255, 154, 179, 0.4);
+      box-shadow: 0 10px 25px rgba(255, 154, 179, 0.45);
       cursor: pointer;
-      position: relative;
-      transition: transform 0.2s ease;
-    }
-    .card-box:active {
-      transform: scale(0.96);
     }
     .card-heart {
-      font-size: 100px;
+      font-size: 90px;
       line-height: 1;
-      filter: drop-shadow(0 8px 16px rgba(230, 57, 98, 0.4));
-      animation: pulse 1.5s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
+      margin: 10px 0;
     }
 
-    /* Screen 2: Countdown */
+    /* Screen 2 */
     .timer-container {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       margin: 25px 0 30px;
     }
     .time-unit {
@@ -116,16 +93,16 @@
     }
     .time-lbl {
       font-size: 11px;
-      letter-spacing: 1px;
       text-transform: uppercase;
+      font-weight: 700;
       opacity: 0.8;
     }
 
-    /* Screen 3: Excitement */
+    /* Screen 3 */
     .btn-group {
       position: relative;
       width: 100%;
-      height: 120px;
+      height: 110px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -141,11 +118,10 @@
       font-size: 15px;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s ease;
       left: 60%;
     }
 
-    /* Screen 4: Balloons */
+    /* Screen 4 */
     .balloon-stage {
       width: 100%;
       height: 270px;
@@ -158,124 +134,70 @@
       height: 80px;
       border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
       cursor: pointer;
-      animation: floatBal 2.5s ease-in-out infinite alternate;
-      box-shadow: inset -5px -5px 12px rgba(0,0,0,0.12);
-      transition: transform 0.15s ease, opacity 0.2s;
+      box-shadow: inset -5px -5px 12px rgba(0,0,0,0.15);
     }
-    .balloon:active {
-      transform: scale(0.9);
-    }
-    .balloon::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 14px;
-      background: #b08d98;
-    }
-    .b-pink { background: radial-gradient(circle at 30% 30%, #ff9ebb, #e63962); top: 15px; left: 15%; animation-delay: 0s; }
-    .b-teal { background: radial-gradient(circle at 30% 30%, #a8eedb, #3fa78f); top: 75px; right: 18%; animation-delay: 0.5s; }
-    .b-purple { background: radial-gradient(circle at 30% 30%, #c8b6ff, #8338ec); bottom: 20px; left: 22%; animation-delay: 1s; }
-    .b-yellow { background: radial-gradient(circle at 30% 30%, #ffe66d, #f4a261); bottom: 30px; right: 20%; animation-delay: 1.5s; }
-    @keyframes floatBal {
-      from { transform: translateY(0); }
-      to { transform: translateY(-12px); }
-    }
+    .b-pink { background: #ff758f; top: 15px; left: 15%; }
+    .b-teal { background: #48cae4; top: 75px; right: 18%; }
+    .b-purple { background: #b5179e; bottom: 20px; left: 22%; }
+    .b-yellow { background: #ffb703; bottom: 30px; right: 20%; }
     .revealed-text {
       font-family: 'Caveat', cursive;
-      font-size: 36px;
+      font-size: 38px;
       color: #9d174d;
-      min-height: 45px;
+      min-height: 50px;
       margin-top: 10px;
     }
 
-    /* Screen 5: Cake & Candle */
+    /* Screen 5 */
     .cake-container {
       margin: 25px 0;
-      position: relative;
+      cursor: pointer;
       display: flex;
       flex-direction: column;
       align-items: center;
-      cursor: pointer;
-    }
-    .candle {
-      width: 14px;
-      height: 42px;
-      background: repeating-linear-gradient(45deg, #ffd166, #ffd166 6px, #ef476f 6px, #ef476f 12px);
-      border-radius: 4px;
-      position: relative;
     }
     .flame {
       width: 16px;
       height: 22px;
-      background: radial-gradient(circle at 50% 80%, #ffbe0b, #ff006e);
-      border-radius: 50% 50% 35% 35%;
-      position: absolute;
-      top: -22px;
-      left: -1px;
-      animation: flicker 0.6s infinite alternate;
-      box-shadow: 0 0 16px #ffbe0b;
+      background: #ffbe0b;
+      border-radius: 50%;
+      box-shadow: 0 0 14px #ffbe0b;
+      margin-bottom: 2px;
     }
-    .flame.extinguished {
-      display: none;
-    }
-    .smoke {
-      display: none;
-      position: absolute;
-      top: -30px;
-      font-size: 20px;
-      animation: riseSmoke 1.5s forwards ease-out;
-    }
-    @keyframes flicker {
-      0% { transform: scale(1) rotate(-2deg); }
-      100% { transform: scale(1.15) rotate(2deg); }
-    }
-    @keyframes riseSmoke {
-      0% { opacity: 0.8; transform: translateY(0) scale(0.8); }
-      100% { opacity: 0; transform: translateY(-35px) scale(1.6); }
+    .flame.extinguished { display: none; }
+    .candle {
+      width: 14px;
+      height: 40px;
+      background: repeating-linear-gradient(45deg, #ffd166, #ffd166 6px, #ef476f 6px, #ef476f 12px);
+      border-radius: 4px;
     }
     .cake-body {
       width: 140px;
-      height: 70px;
+      height: 65px;
       background: #78350f;
       border-radius: 12px 12px 18px 18px;
-      position: relative;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-    }
-    .cake-icing {
-      width: 100%;
-      height: 24px;
-      background: #fff;
-      border-radius: 12px 12px 10px 10px;
-      box-shadow: inset 0 -3px 0 #ffd1dc;
+      border-top: 18px solid #fff;
     }
 
-    /* Screen 6: Bouquet */
+    /* Screen 6 */
     .bouquet-box {
       position: relative;
       width: 320px;
-      height: 360px;
+      height: 350px;
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 10px 0;
     }
-    .bouquet-img {
-      font-size: 100px;
-      filter: drop-shadow(0 12px 20px rgba(220, 20, 60, 0.35));
-    }
     .bubble {
       position: absolute;
       background: #fff;
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 16px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       color: #831843;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      white-space: nowrap;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .bb1 { top: 15px; left: 0; }
     .bb2 { top: 15px; right: 0; }
@@ -284,7 +206,7 @@
     .bb5 { bottom: 15px; left: 10px; }
     .bb6 { bottom: 15px; right: 10px; }
 
-    /* Screen 7: Letter */
+    /* Screen 7 */
     .letter-paper {
       width: 100%;
       max-width: 330px;
@@ -294,36 +216,27 @@
       box-shadow: 0 8px 24px rgba(255, 182, 193, 0.45);
       border: 1px solid #ffe1e8;
       text-align: left;
-      font-size: 14.5px;
+      font-size: 14px;
       line-height: 1.6;
       color: #4a1525;
-      min-height: 350px;
-      position: relative;
-    }
-    .typewriter-text {
-      white-space: pre-wrap;
-      font-family: 'Nunito', sans-serif;
+      min-height: 340px;
     }
 
-    /* Screen 8: Gift Box */
+    /* Screen 8 */
     .gift-box {
       font-size: 80px;
       margin: 25px 0;
       cursor: pointer;
       position: relative;
       display: inline-block;
-      transition: transform 0.2s;
-    }
-    .gift-box:active {
-      transform: scale(0.9);
     }
     .gift-badge {
       position: absolute;
-      top: -6px;
-      right: -8px;
+      top: -5px;
+      right: -5px;
       background: #e63962;
       color: #fff;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 800;
       width: 24px;
       height: 24px;
@@ -331,59 +244,53 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
     .final-card {
       background: #fff;
       padding: 25px;
       border-radius: 24px;
       box-shadow: 0 10px 30px rgba(255, 182, 193, 0.5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
     }
   </style>
 </head>
 <body>
   <div class="phone-wrapper">
-    <!-- STEP 1: OPENING CARD -->
+    <!-- SCREEN 1 -->
     <div id="screen1" class="screen active">
-      <div class="card-box" id="cardClickArea">
-        <h3 style="margin-bottom: 8px; font-weight: 800; font-size: 20px; color: #831843;">Gulista 🥰✨</h3>
+      <div class="card-box" onclick="goToScreen(2)">
+        <h3 style="margin-bottom: 6px; font-weight: 800; font-size: 22px; color: #831843;">Gulista 🥰✨</h3>
         <div class="card-heart">❤️</div>
-        <p style="margin-top: 14px; font-size: 13px; font-weight: 700; color: #9d174d; opacity: 0.85;">Tap to open</p>
+        <p style="margin-top: 10px; font-size: 14px; font-weight: 800; color: #e63962;">Tap to open</p>
       </div>
     </div>
 
-    <!-- STEP 2: COUNTDOWN SCREEN -->
+    <!-- SCREEN 2 -->
     <div id="screen2" class="screen">
       <p style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800; color: #831843;">
         Someone crafted something magical for
       </p>
-      <h1 style="font-family: 'Caveat', cursive; font-size: 50px; color: #9d174d; margin: 8px 0 2px;">
+      <h1 style="font-family: 'Caveat', cursive; font-size: 48px; color: #9d174d; margin: 6px 0;">
         Gulista 🥰✨
       </h1>
-      <p style="font-size: 24px; margin-bottom: 20px;">😘</p>
-
+      <p style="font-size: 26px; margin-bottom: 15px;">😘</p>
       <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 800; color: #831843;">
         The magic begins in
       </div>
 
       <div class="timer-container">
         <div class="time-unit"><span id="days" class="time-num">00</span><span class="time-lbl">Days</span></div>
-        <span style="font-size: 28px; font-weight: 800; align-self: center;">:</span>
+        <span style="font-size: 26px; font-weight: 800; align-self: center;">:</span>
         <div class="time-unit"><span id="hours" class="time-num">00</span><span class="time-lbl">Hrs</span></div>
-        <span style="font-size: 28px; font-weight: 800; align-self: center;">:</span>
+        <span style="font-size: 26px; font-weight: 800; align-self: center;">:</span>
         <div class="time-unit"><span id="minutes" class="time-num">00</span><span class="time-lbl">Min</span></div>
-        <span style="font-size: 28px; font-weight: 800; align-self: center;">:</span>
+        <span style="font-size: 26px; font-weight: 800; align-self: center;">:</span>
         <div class="time-unit"><span id="seconds" class="time-num">00</span><span class="time-lbl">Sec</span></div>
       </div>
 
-      <button class="btn-primary" id="btnPeek">Can't wait? Peek now</button>
+      <button class="btn-primary" onclick="goToScreen(3)">Can't wait? Peek now</button>
     </div>
 
-    <!-- STEP 3: EXCITEMENT CHECK -->
+    <!-- SCREEN 3 -->
     <div id="screen3" class="screen">
       <h2 style="font-family: 'Caveat', cursive; font-size: 38px; color: #9d174d; margin-bottom: 10px;">
         Happy Birthday, Gulista 🥰✨
@@ -392,54 +299,48 @@
       <p style="font-weight: 700; font-size: 17px; margin-top: 10px;">Are you excited for what's next?</p>
       
       <div class="btn-group">
-        <button class="btn-primary" id="yesBtn" style="position: absolute; left: 20%;">Yes</button>
-        <button id="noBtn">No</button>
+        <button class="btn-primary" style="position: absolute; left: 20%;" onclick="goToScreen(4)">Yes</button>
+        <button id="noBtn" onclick="dodgeNo()" onmouseover="dodgeNo()" ontouchstart="dodgeNo()">No</button>
       </div>
     </div>
 
-    <!-- STEP 4: BALLOONS -->
+    <!-- SCREEN 4 -->
     <div id="screen4" class="screen">
-      <div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">
+      <div style="font-size: 13px; font-weight: 800; text-transform: uppercase;">
         <span id="popCount">0</span>/4 Popped
       </div>
-      <h3 style="font-weight: 800; font-size: 22px; margin: 8px 0 15px; color: #831843;">Pop all 4 balloons</h3>
+      <h3 style="font-weight: 800; font-size: 22px; margin: 6px 0 15px; color: #831843;">Pop all 4 balloons</h3>
 
       <div class="balloon-stage">
-        <div class="balloon b-pink" data-word="You"></div>
-        <div class="balloon b-teal" data-word="are"></div>
-        <div class="balloon b-purple" data-word="so"></div>
-        <div class="balloon b-yellow" data-word="special"></div>
+        <div class="balloon b-pink" onclick="popBal(this, 'You')"></div>
+        <div class="balloon b-teal" onclick="popBal(this, 'are')"></div>
+        <div class="balloon b-purple" onclick="popBal(this, 'so')"></div>
+        <div class="balloon b-yellow" onclick="popBal(this, 'special')"></div>
       </div>
 
       <div class="revealed-text" id="revealedWords"></div>
-      <button id="nextAfterBal" class="btn-primary" style="display: none; margin-top: 25px;">
+      <button id="nextBalBtn" class="btn-primary" style="display: none; margin-top: 20px;" onclick="goToScreen(5)">
         Continue ✨
       </button>
     </div>
 
-    <!-- STEP 5: CAKE & CANDLE -->
+    <!-- SCREEN 5 -->
     <div id="screen5" class="screen">
       <h2 id="candleTitle" style="font-family: 'Caveat', cursive; font-size: 38px; color: #9d174d;">Blow the candle 🕯️</h2>
       
-      <div class="cake-container" id="cakeArea">
-        <div class="smoke" id="candleSmoke">💨</div>
+      <div class="cake-container" onclick="blowCandle()">
         <div class="flame" id="candleFlame"></div>
         <div class="candle"></div>
-        <div class="cake-body">
-          <div class="cake-icing"></div>
-        </div>
+        <div class="cake-body"></div>
       </div>
 
-      <p id="candleInstruction" style="font-weight: 700; font-size: 15px; opacity: 0.85;">
-        Tap the candle to blow it out!
-      </p>
-
-      <button id="wishNextBtn" class="btn-primary" style="display: none; margin-top: 25px;">
+      <p id="candleInstruction" style="font-weight: 700; font-size: 15px;">Tap the candle to blow it out!</p>
+      <button id="wishNextBtn" class="btn-primary" style="display: none; margin-top: 20px;" onclick="goToScreen(6)">
         See Your Roses 🌹
       </button>
     </div>
 
-    <!-- STEP 6: BOUQUET -->
+    <!-- SCREEN 6 -->
     <div id="screen6" class="screen">
       <h2 style="font-family: 'Caveat', cursive; font-size: 38px; color: #9d174d; margin-bottom: 5px;">
         Your Rose Bouquet 🌹
@@ -451,30 +352,30 @@
         <div class="bubble bb4">Happy Birthday, Gulista 🥰✨</div>
         <div class="bubble bb5">I'm lucky to have you</div>
         <div class="bubble bb6">My favorite person 💖</div>
-        <div class="bouquet-img">💐</div>
+        <div style="font-size: 95px;">💐</div>
       </div>
-      <button class="btn-primary" id="btnToLetter">Read My Heart 💌</button>
+      <button class="btn-primary" onclick="goToScreen(7)">Read My Heart 💌</button>
     </div>
 
-    <!-- STEP 7: LETTER -->
+    <!-- SCREEN 7 -->
     <div id="screen7" class="screen">
       <h2 style="font-family: 'Caveat', cursive; font-size: 38px; color: #9d174d; margin-bottom: 15px;">
         A Message From My Heart 💌
       </h2>
       <div class="letter-paper">
-        <div class="typewriter-text" id="typewriter"></div>
+        <div id="typewriter" style="white-space: pre-wrap;"></div>
       </div>
-      <button id="giftNextBtn" class="btn-primary" style="display: none; margin-top: 22px;">
+      <button id="giftNextBtn" class="btn-primary" style="display: none; margin-top: 20px;" onclick="goToScreen(8)">
         One Last Surprise 🎁
       </button>
     </div>
 
-    <!-- STEP 8: FINAL GIFT -->
+    <!-- SCREEN 8 -->
     <div id="screen8" class="screen">
       <div id="giftStage">
         <h2 style="font-family: 'Caveat', cursive; font-size: 40px; color: #9d174d;">One Last Thing...</h2>
-        <p style="font-weight: 700; margin-top: 5px; opacity: 0.85;">Tap the gift</p>
-        <div class="gift-box" id="giftBoxBtn">
+        <p style="font-weight: 700; margin-top: 5px;">Tap the gift</p>
+        <div class="gift-box" onclick="tapGift()">
           <span class="gift-badge" id="tapBadge">3</span>
           🎁
         </div>
@@ -483,10 +384,10 @@
       <div id="finalSurprise" style="display: none;">
         <div class="final-card">
           <div style="font-size: 80px;">🐰🎂🐻</div>
-          <h2 style="font-family: 'Caveat', cursive; font-size: 38px; color: #9d174d; margin-top: 5px;">
+          <h2 style="font-family: 'Caveat', cursive; font-size: 36px; color: #9d174d; margin-top: 5px;">
             Lots of love for you 💖
           </h2>
-          <p style="font-weight: 700; font-size: 16px; color: #6a1331;">
+          <p style="font-weight: 700; font-size: 16px; color: #6a1331; margin-top: 8px;">
             Once again, Happy Birthday Gulista 🥰✨!
           </p>
         </div>
@@ -496,45 +397,26 @@
 
   <script>
     function goToScreen(num) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-      const target = document.getElementById('screen' + num);
-      if (target) {
-        target.classList.add('active');
-        if (num === 7) startTyping();
-        if (num === 8) launchConfetti();
+      for (let i = 1; i <= 8; i++) {
+        const el = document.getElementById('screen' + i);
+        if (el) el.classList.remove('active');
       }
+      const target = document.getElementById('screen' + num);
+      if (target) target.classList.add('active');
+      if (num === 7) startTyping();
     }
 
-    // Step 1 Click
-    const card = document.getElementById('cardClickArea');
-    card.addEventListener('click', () => goToScreen(2));
-    card.addEventListener('touchend', (e) => {
-      e.preventDefault();
-      goToScreen(2);
-    });
-
-    // Step 2 Click
-    document.getElementById('btnPeek').addEventListener('click', () => goToScreen(3));
-
-    // Countdown logic
     function startCountdown() {
       const now = new Date();
       let targetYear = now.getFullYear();
-      let targetDate = new Date(`December 7, ${targetYear} 00:00:00`);
-
+      let targetDate = new Date('December 7, ' + targetYear + ' 00:00:00');
       if (now > targetDate) {
-        targetDate = new Date(`December 7, ${targetYear + 1} 00:00:00`);
+        targetDate = new Date('December 7, ' + (targetYear + 1) + ' 00:00:00');
       }
 
       function update() {
         const diff = targetDate - new Date();
-        if (diff <= 0) {
-          document.getElementById('days').innerText = '00';
-          document.getElementById('hours').innerText = '00';
-          document.getElementById('minutes').innerText = '00';
-          document.getElementById('seconds').innerText = '00';
-          return;
-        }
+        if (diff <= 0) return;
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
         const m = Math.floor((diff / 1000 / 60) % 60);
@@ -550,71 +432,76 @@
     }
     startCountdown();
 
-    // Step 3 Dodging No button
-    const noBtn = document.getElementById('noBtn');
-    function dodgeNo(e) {
-      if (e) e.preventDefault();
-      const randomX = Math.floor(Math.random() * 160) - 80;
-      const randomY = Math.floor(Math.random() * 80) - 40;
-      noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    function dodgeNo() {
+      const noBtn = document.getElementById('noBtn');
+      const x = Math.floor(Math.random() * 160) - 80;
+      const y = Math.floor(Math.random() * 80) - 40;
+      noBtn.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
     }
-    noBtn.addEventListener('mouseenter', dodgeNo);
-    noBtn.addEventListener('touchstart', dodgeNo);
-    noBtn.addEventListener('click', dodgeNo);
 
-    document.getElementById('yesBtn').addEventListener('click', () => goToScreen(4));
-
-    // Step 4 Balloons
     let popped = 0;
-    const wordsRevealed = [];
-    document.querySelectorAll('.balloon').forEach(balloon => {
-      function pop() {
-        if (balloon.style.visibility === 'hidden') return;
-        balloon.style.transform = 'scale(1.3)';
-        balloon.style.opacity = '0';
-        setTimeout(() => {
-          balloon.style.visibility = 'hidden';
-        }, 150);
-
-        wordsRevealed.push(balloon.getAttribute('data-word'));
-        popped++;
-        document.getElementById('popCount').innerText = popped;
-        document.getElementById('revealedWords').innerText = wordsRevealed.join(' ');
-
-        if (popped === 4) {
-          document.getElementById('nextAfterBal').style.display = 'inline-block';
-          launchConfetti();
-        }
+    const words = [];
+    function popBal(el, word) {
+      if (el.style.display === 'none') return;
+      el.style.display = 'none';
+      words.push(word);
+      popped++;
+      document.getElementById('popCount').innerText = popped;
+      document.getElementById('revealedWords').innerText = words.join(' ');
+      if (popped === 4) {
+        document.getElementById('nextBalBtn').style.display = 'inline-block';
       }
-      balloon.addEventListener('click', pop);
-      balloon.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        pop();
-      });
-    });
+    }
 
-    document.getElementById('nextAfterBal').addEventListener('click', () => goToScreen(5));
-
-    // Step 5 Cake & Candle
-    const cakeArea = document.getElementById('cakeArea');
     function blowCandle() {
-      const flame = document.getElementById('candleFlame');
-      if (flame.classList.contains('extinguished')) return;
-
-      flame.classList.add('extinguished');
-      document.getElementById('candleSmoke').style.display = 'block';
+      document.getElementById('candleFlame').classList.add('extinguished');
       document.getElementById('candleTitle').innerText = 'Close your eyes & make a wish ✨';
       document.getElementById('candleInstruction').style.display = 'none';
       document.getElementById('wishNextBtn').style.display = 'inline-block';
-      launchConfetti();
     }
-    cakeArea.addEventListener('click', blowCandle);
-    cakeArea.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      blowCandle();
-    });
 
-    document.getElementById('wishNextBtn').addEventListener('click', () => goToScreen(6));
+    const letterMsg = `Dear Gulista 🥰✨,
 
-    // Step 6 Bouquet
-    document.getElemen
+Happy Birthday to someone truly special! 🎂
+
+You are Super Loyal, My Rock, and I'm so grateful to have you in my life.
+
+You bring so much warmth and sweetness into my life. Every moment with you is precious.
+
+On your special day, I wish you all the happiness, love, and joy that you deserve. May this year bring you countless beautiful moments and wonderful memories.
+
+Here's to celebrating you today and always! 🎉
+
+With love and best wishes,
+Your Special Someone 💖`;
+
+    let tIndex = 0;
+    function startTyping() {
+      const t = document.getElementById('typewriter');
+      t.innerText = '';
+      tIndex = 0;
+      function step() {
+        if (tIndex < letterMsg.length) {
+          t.innerText += letterMsg.charAt(tIndex);
+          tIndex++;
+          setTimeout(step, 25);
+        } else {
+          document.getElementById('giftNextBtn').style.display = 'inline-block';
+        }
+      }
+      step();
+    }
+
+    let taps = 3;
+    function tapGift() {
+      taps--;
+      if (taps > 0) {
+        document.getElementById('tapBadge').innerText = taps;
+      } else {
+        document.getElementById('giftStage').style.display = 'none';
+        document.getElementById('finalSurprise').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
